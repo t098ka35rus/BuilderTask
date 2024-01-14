@@ -35,9 +35,9 @@ public class Person {
     }
 
     public OptionalInt getAge() {
-        OptionalInt optionalIntAge = OptionalInt.of(this.age);
-        if (optionalIntAge.isPresent()) {
-            return optionalIntAge;
+
+        if (this.age != 0) {
+            return OptionalInt.of(this.age);
         }
         return OptionalInt.empty();
     }
@@ -46,7 +46,7 @@ public class Person {
         return address;
     }
 
-    public void setAddress (String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
