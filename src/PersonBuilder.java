@@ -1,15 +1,12 @@
-import java.util.Locale;
-
 public class PersonBuilder {
-    String name;
-    String surname;
-    int age;
-    String address;
-
+    private String name;
+    private String surname;
+    private int age;
+    private String address;
 
 
     public PersonBuilder setName(String name) {
-               this.name = name;
+        this.name = name;
         return this;
     }
 
@@ -18,7 +15,7 @@ public class PersonBuilder {
         return this;
     }
 
-    public PersonBuilder setAge(int age)  throws  IllegalArgumentException {
+    public PersonBuilder setAge(int age) throws IllegalArgumentException {
         if (age <= 0) {
             throw new IllegalArgumentException("Возраст недопустимый");
         }
@@ -31,8 +28,8 @@ public class PersonBuilder {
         return this;
     }
 
-    public Person build()  throws IllegalStateException {
-        if (this.name == null && this.surname == null){
+    public Person build() throws IllegalStateException {
+        if (this.name == null && this.surname == null) {
             throw new IllegalStateException("Не хватает обязательных полей");
         }
         Person person = new Person(this.name, this.surname, this.age);

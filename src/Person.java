@@ -1,3 +1,5 @@
+import java.util.OptionalInt;
+
 public class Person {
     protected final String name;
     protected final String surname;
@@ -17,17 +19,11 @@ public class Person {
     }
 
     public boolean hasAge() {
-        if (this.age >= 0) {
-            return true;
-        }
-        return false;
+        return this.age >= 0;
     }
 
     public boolean hasAddress() {
-        if (this.address != null) {
-            return true;
-        }
-        return false;
+        return this.address != null;
     }
 
     public String getName() {
@@ -38,8 +34,8 @@ public class Person {
         return surname;
     }
 
-    public int getAge() {
-        return age;
+    public OptionalInt getAge() {
+        return OptionalInt.of(age);
     }
 
     public String getAddress() {
