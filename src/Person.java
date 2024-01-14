@@ -19,7 +19,7 @@ public class Person {
     }
 
     public boolean hasAge() {
-        return this.age >= 0;
+        return this.getAge().isPresent();
     }
 
     public boolean hasAddress() {
@@ -35,7 +35,7 @@ public class Person {
     }
 
     public OptionalInt getAge() {
-        OptionalInt optionalIntAge = this.getAge();
+        OptionalInt optionalIntAge = OptionalInt.of(this.age);
         if (optionalIntAge.isPresent()) {
             return optionalIntAge;
         }
